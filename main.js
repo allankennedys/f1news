@@ -1,6 +1,6 @@
 
 function getNews(){
-    fetch('https://newsapi.org/v2/everything?q=f1&language=pt&apiKey=81744279e9d247f68fa29c098eb868f3')
+    fetch('https://newsapi.org/v2/everything?q=f1&language=pt&apiKey=[API_KEY]')
     .then(response => {
         if(!response.ok){
             throw Error("ERROR");        }
