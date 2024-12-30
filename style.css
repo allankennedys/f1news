@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+*{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+header{
+    display: flex;
+    margin-bottom: 50px;
+}
+
+
+#newsArea{
+    
+display: flex;
+flex-direction: row;
+justify-content: space-evenly;
+flex-wrap: wrap;
+width: 90%;
+margin: 0 auto;}
+
+#newsArea div{
+    width: 30%;
+    border: 1px solid black;
+    border-radius: 16px;
+    padding: 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    
+}
+
+#newsArea div h1:hover{
+    color: red;
+}
+
+#newsArea a{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 8pt;
+    text-decoration: none;
+    color: black;
+}
