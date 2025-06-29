@@ -18,7 +18,7 @@ console.log(dataFormatada);
 
 function getNews(){
 
-    fetch('https://gnewsf1.vercel.app/api.news')
+    fetch('https://gnewsf1.vercel.app/api/news')
     .then(response => response.json())
     .then(data => {
         console.log(data);
