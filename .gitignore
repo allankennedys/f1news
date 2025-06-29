@@ -1,11 +1,2 @@
-# Arquivos sensíveis
 .env
 config.js
-secrets.json
-api-keys.js
-
-# Pastas de dependências
-node_modules/
-
-# Arquivos do sistema
-.DS_Store
