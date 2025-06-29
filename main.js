@@ -1,6 +1,5 @@
-import API_KEY from './config.js';
-  
-  function formatarDataBR(dataISO) {
+
+ function formatarDataBR(dataISO) {
   const data = new Date(dataISO);
   const dia = String(data.getDate()).padStart(2, '0');
   const mes = String(data.getMonth() + 1).padStart(2, '0');
@@ -19,14 +18,8 @@ console.log(dataFormatada);
 
 function getNews(){
 
-    fetch(`https://gnews.io/api/v4/search?q=formula 1&lang=pt&apikey=${API_KEY}`)
-    .then(response => {
-        if(!response.ok){
-            throw Error("ERROR");        }
-        else{
-            return response.json();
-        }
-    })
+    fetch('https://gnewsf1.vercel.app/api.news')
+    .then(response => response.json())
     .then(data => {
         console.log(data);
 
@@ -34,14 +27,14 @@ function getNews(){
     const articles = data.articles;
     
     
-    for(i=0; i<articles.length; i++){
+    for(let i=0; i<articles.length; i++){
 
         const newsContainer = document.createElement('div');
 
         const titulo = document.createElement('h2');
         const autor = document.createElement('p');
         const descricao = document.createElement('h5');
-        const data = document.createElement('p');
+        const dataPub = document.createElement('p');
         const link = document.createElement('a');
         const image = document.createElement('img');
         const btn = document.createElement('a');
@@ -56,7 +49,7 @@ function getNews(){
 
         titulo.innerHTML = articles[i].title;
         autor.innerHTML = `Por ${articles[i].source.name}`;
-        data.innerHTML = `Publicado em ${dataPublicacao}`;
+        dataPub.innerHTML = `Publicado em ${dataPublicacao}`;
         descricao.innerHTML = articles[i].description;
         btn.innerHTML = 'Leia mais';
         link.href = articles[i].url;
@@ -70,7 +63,7 @@ function getNews(){
         link.appendChild(titulo);
         newsContainer.appendChild(image);
         newsContainer.appendChild(autor);
-        newsContainer.appendChild(data);
+        newsContainer.appendChild(dataPub);
         newsContainer.appendChild(descricao);
         newsContainer.appendChild(btn);
 
